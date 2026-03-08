@@ -1,0 +1,41 @@
+# AI Anime Workflow — Settings
+# Copy to settings.yaml and fill in your values.
+
+providers:
+  novelai:
+    api_key: "YOUR_NOVELAI_API_KEY"
+    base_url: "https://api.novelai.net"
+    model: "nai-diffusion-3"
+    default_params:
+      width: 1024
+      height: 576
+      steps: 28
+      sampler: "k_euler_ancestral"
+
+  stability:
+    api_key: "YOUR_STABILITY_API_KEY"
+    base_url: "https://api.stability.ai"
+    model: "stable-diffusion-xl-1024-v1-0"
+
+pipeline:
+  default_provider: "novelai"
+  frames_per_second: 12
+  keyframe_interval: 4
+  interpolation_method: "rife"
+  output_resolution: [1024, 576]
+  output_codec: "libx264"
+  output_format: "mp4"
+
+rate_limit:
+  max_concurrent: 3
+  requests_per_minute: 30
+  retry_attempts: 3
+  retry_delay_seconds: 5
+
+paths:
+  frame_cache: ".cache/frames"
+  output_dir: "outputs"
+
+logging:
+  level: "INFO"
+  file: "logs/workflow.log"
