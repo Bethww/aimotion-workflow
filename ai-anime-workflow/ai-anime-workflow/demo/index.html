@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Anime Workflow — Demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; background: #0f0f14; color: #e0dfe4; min-height: 100vh; }
+    header { padding: 2rem; text-align: center; border-bottom: 1px solid #23232e; }
+    header h1 { font-size: 1.6rem; letter-spacing: 0.04em; }
+    header p { color: #888; margin-top: 0.4rem; font-size: 0.9rem; }
+    .container { max-width: 640px; margin: 2rem auto; padding: 0 1.5rem; }
+    label { display: block; font-size: 0.85rem; color: #aaa; margin-bottom: 0.3rem; }
+    textarea, input, select { width: 100%; padding: 0.65rem 0.8rem; border-radius: 6px; border: 1px solid #2a2a36; background: #1a1a24; color: #e0dfe4; font-size: 0.9rem; margin-bottom: 1rem; }
+    textarea { min-height: 100px; resize: vertical; }
+    .row { display: flex; gap: 1rem; }
+    .row > div { flex: 1; }
+    button { width: 100%; padding: 0.75rem; border: none; border-radius: 6px; background: #6c5ce7; color: #fff; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #5a4bd1; }
+    #status { margin-top: 1.5rem; padding: 1rem; border-radius: 6px; background: #1a1a24; border: 1px solid #2a2a36; font-size: 0.85rem; color: #888; text-align: center; min-height: 60px; display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 AI Anime Workflow</h1>
+    <p>Generate anime-style video from text prompts</p>
+  </header>
+  <div class="container">
+    <label for="prompt">Prompt</label>
+    <textarea id="prompt" placeholder="a girl running through cherry blossoms at sunset, anime style, cinematic lighting"></textarea>
+    <div class="row">
+      <div>
+        <label for="provider">Provider</label>
+        <select id="provider"><option>NovelAI</option><option>Stability AI</option></select>
+      </div>
+      <div>
+        <label for="frames">Frames</label>
+        <input id="frames" type="number" value="24" min="1" max="300" />
+      </div>
+      <div>
+        <label for="fps">FPS</label>
+        <input id="fps" type="number" value="12" min="1" max="60" />
+      </div>
+    </div>
+    <button onclick="handleGenerate()">Generate Animation</button>
+    <div id="status">Configure your prompt and hit Generate to start.</div>
+  </div>
+  <script>
+    function handleGenerate() {
+      const s = document.getElementById("status");
+      s.textContent = "⏳ Pipeline not yet connected. This is a UI demo only.";
+      s.style.color = "#f0c040";
+    }
+  </script>
+</body>
+</html>

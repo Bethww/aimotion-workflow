@@ -1,0 +1,24 @@
+scenes:
+  - scene_id: "opening"
+    description: "Wide shot of a cherry blossom lined path at golden hour"
+    prompt: "wide landscape, cherry blossom path, golden hour, petals drifting, anime, Ghibli inspired, cinematic"
+    negative_prompt: "low quality, blurry, deformed"
+    duration: 3.0
+    transition: "fade"
+    style_tags: ["ghibli", "landscape", "golden_hour"]
+
+  - scene_id: "character_intro"
+    description: "A girl appears and begins running toward camera"
+    prompt: "anime girl running, cherry blossom path, school uniform, wind, petals swirling, cinematic"
+    negative_prompt: "low quality, blurry, deformed, static"
+    duration: 4.0
+    transition: "cut"
+    style_tags: ["character", "motion"]
+
+  - scene_id: "close_up"
+    description: "Close-up of her face smiling, petals in foreground"
+    prompt: "close-up anime girl smiling, cherry blossom bokeh, warm golden light, detailed eyes, cinematic"
+    negative_prompt: "low quality, blurry, deformed"
+    duration: 2.0
+    transition: "fade"
+    style_tags: ["portrait", "bokeh"]
